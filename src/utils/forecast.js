@@ -15,8 +15,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find location.');
         } else {
-            console.log(body.daily.data[0]);
-            callback(undefined, `${body.daily.data[0].summary} Trenutno je ${body.currently.temperature} stepeni Celzijusa vani. Najveća temperatura danas iznosi ${body.daily.data[0].temperatureHigh}, a najniža ${body.daily.data[0].temperatureLow}. Sanse sa kisu su ${body.currently.precipProbability}%. ${body.daily.data[0].summary}`)
+            callback(undefined, `Trenutno je ${body.currently.temperature} stepeni Celzijusa vani. Najveća temperatura danas iznosi ${body.daily.data[0].temperatureHigh}, a najniža ${body.daily.data[0].temperatureLow}. Sanse sa kisu su ${body.currently.precipProbability}%. ${body.daily.data[0].summary}`)
         }
     });
 };
